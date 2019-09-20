@@ -1,8 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<!--
 <p>
   <strong>Make title:</strong>
   <%= @car.make_title %>
+</p>
+-->
+<p>
+  <strong>Make:</strong>
+  <%= @car.make.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @car.make.country %>
 </p>
 
 <p>
@@ -13,11 +24,6 @@
 <p>
   <strong>Vin number:</strong>
   <%= @car.vin_number %>
-</p>
-
-<p>
-  <strong>Make:</strong>
-  <%= @car.make.name %>
 </p>
 
 <p>
