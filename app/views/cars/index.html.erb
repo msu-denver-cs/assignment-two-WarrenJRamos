@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<body style="background-color:peachpuff;">
+<h1 style="font-family:verdana;color:maroon;font-size:40px;">Cars</h1>
+
+<table border="1" bordercolor="lightsalmon">
+  <thead>
+  <col width="130">
+  <col width="80">
+    <tr style="font-size:20px;">
+      <!--<th style ="color:blue">Make Title</th>-->
+      <th style ="color:maroon">Make</th>
+      <th style ="color:maroon">Country</th>
+      <th style ="color:maroon">Model</th>
+      <th style ="color:maroon">Vin Number</th>
+      <th style ="color:maroon">Car Parts</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <!--<td><%= car.make_title %></td>-->
+        <td><%= car.make.name %></td>
+        <td><%= car.make.country %></td>
+        <td><%= car.model_title %></td>
+        <td><%= car.vin_number %></td>
+        <td><% car.parts.each do |part| %>
+          <li><%= part.part_name %></li>
+        <% end %></td>
+        <td><%= link_to 'Show', car %></td>
+        <td><%= link_to 'Edit', edit_car_path(car) %></td>
+        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Click here to add a new car', new_car_path, class: 'css_class', 
+style: 'color:maroon;font-size:20px' %>
+
+<br><br>
+<%= image_tag("cars2.png", alt: "Cars") %>
