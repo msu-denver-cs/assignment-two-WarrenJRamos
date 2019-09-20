@@ -2,8 +2,8 @@
 
 one:
   car: one
-  make: one
+  part: one
 
 two:
   car: two
-  make: two
+  part: two

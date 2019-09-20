@@ -21,6 +21,10 @@
         <td><%= car.model_title %></td>
         <td><%= car.vin_number %></td>
         <td><%= car.make.name %></td>
+        <td><% car.parts.each do |part| %>
+          <li><%= part.part_name %></li>
+        <% end %></td>
+        <!--<td><%= car.parts.to_ary %></td> -->
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>

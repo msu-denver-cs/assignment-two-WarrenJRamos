@@ -31,9 +31,16 @@
     <%= form.collection_select :make_id, Make.all, :id, :name %>
   </div>
 
+  <!--
   <div class="field">
     <%= form.label :part_id %>
     <%= form.collection_select :part_id, Part.all, :id, :part_name %>
+  </div>
+  -->
+
+  <div class="field">
+    <%= form.label :car_parts %><br>
+    <%= form.collection_check_boxes(:part_ids, @parts, :id, :part_name) %>
   </div>
 
   <div class="actions">
