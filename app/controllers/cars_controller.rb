@@ -10,6 +10,7 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @parts = Part.all
   end
 
   # GET /cars/new
@@ -61,6 +62,11 @@ class CarsController < ApplicationController
       format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @cars = Car.where("make_title like ?", "%#{params[:query]}%")
+    render :index
   end
 
   private
