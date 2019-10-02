@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <body style="background-color:peachpuff;">
+
+<%= form_tag(search_cars_url, method: "get") do %>
+    <%= label_tag(:query, "Search for:") %>
+    <%= text_field_tag(:query) %>
+    <%= submit_tag("Search") %>
+<% end %>
+
 <h1 style="font-family:verdana;color:maroon;font-size:40px;">Cars</h1>
 
 <table border="1" bordercolor="lightsalmon">
