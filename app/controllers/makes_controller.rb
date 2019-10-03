@@ -63,7 +63,7 @@ class MakesController < ApplicationController
   end
 
   def search
-    @makes = Make.where("name like ? OR country like ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    @makes = Make.where("name like ? OR country like ?", "%#{params[:search]}%", "%#{params[:search]}%")
     render :index
   end
 
