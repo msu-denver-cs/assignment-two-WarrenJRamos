@@ -1,4 +1,22 @@
+<head>
+  <style>
+    body {background-color: peachpuff;}
+    h1   {color: blue;font-family:verdana;color:maroon;font-size:40px;}
+    p    {color: red;}
+    table {border:1;bordercolor:lightsalmon;}
+    th {color:maroon;colspan:3;}
+    tr {font-size:20px;}
+    col {width:130;}
+  </style>
+</head>
+
 <p id="notice"><%= notice %></p>
+
+<%= form_tag(search_makes_url, method: "get") do %>
+  <%= label_tag(:query, "Search for: (Can search for 'Name' or 'Country')") %>
+  <%= text_field_tag :query, params[:query], data: { autocomplete: autocomplete_make_name_makes_path } %>
+  <%= submit_tag("Search") %>
+<% end %>
 
 <h1>Makes</h1>
 

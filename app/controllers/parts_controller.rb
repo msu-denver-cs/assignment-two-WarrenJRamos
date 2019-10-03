@@ -1,4 +1,5 @@
 class PartsController < ApplicationController
+  autocomplete :part, :part_name, full_search: true
   before_action :set_part, only: [:show, :edit, :update, :destroy]
 
   # GET /parts
