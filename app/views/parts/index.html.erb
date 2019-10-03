@@ -13,8 +13,8 @@
 </head>
 
 <%= form_tag(search_parts_url, method: "get") do %>
-  <%= label_tag(:query, "Search for:") %>
-  <%= text_field_tag :query, params[:query], data: { autocomplete: autocomplete_part_name_parts_path } %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_part_part_name_parts_path } %>
   <%= submit_tag("Search") %>
 <% end %>
 
