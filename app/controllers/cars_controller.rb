@@ -1,10 +1,12 @@
 class CarsController < ApplicationController
+  autocomplete :car, :model_title, full_search: true
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
   # GET /cars.json
   def index
     @cars = Car.all
+    @parts = Part.all
   end
 
   # GET /cars/1
@@ -65,7 +67,8 @@ class CarsController < ApplicationController
   end
 
   def search
-    @cars = Car.where("make_title like ?", "%#{params[:query]}%")
+    @cars = Car.where("model_title like ? OR make_id like ? OR vin_number like ?", 
+      "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     render :index
   end
 

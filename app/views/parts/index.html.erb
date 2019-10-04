@@ -1,5 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<head>
+  <style>
+    body {background-color: peachpuff;}
+    h1   {color: blue;font-family:verdana;color:maroon;font-size:40px;}
+    p    {color: red;}
+    table {border:1;bordercolor:lightsalmon;}
+    th {color:maroon;colspan:3;}
+    tr {font-size:20px;}
+    col {width:130;}
+  </style>
+</head>
+
+<%= form_tag(search_parts_url, method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_part_part_name_parts_path } %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <h1>Parts</h1>
 
 <table>
