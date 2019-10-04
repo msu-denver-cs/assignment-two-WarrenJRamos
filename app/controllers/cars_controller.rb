@@ -1,15 +1,18 @@
 class CarsController < ApplicationController
+  autocomplete :car, :model_title, full_search: true
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   # GET /cars
   # GET /cars.json
   def index
     @cars = Car.all
+    @parts = Part.all
   end
 
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @parts = Part.all
   end
 
   # GET /cars/new
@@ -61,6 +64,12 @@ class CarsController < ApplicationController
       format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @cars = Car.where("model_title like ? OR make_id like ? OR vin_number like ?", 
+      "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    render :index
   end
 
   private

@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <body style="background-color:peachpuff;">
+<%= form_tag(search_cars_url, method: "get") do %>
+  <%= label_tag(:search, "Search for: (Can search for 'Model', 'Vin Number', or 'make_id')") %>
+  <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_car_model_title_cars_path } %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <h1 style="font-family:verdana;color:maroon;font-size:40px;">Cars</h1>
 
 <table border="1" bordercolor="lightsalmon">
@@ -21,7 +27,6 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <!--<td><%= car.make_title %></td>-->
         <td><%= car.make.name %></td>
         <td><%= car.make.country %></td>
         <td><%= car.model_title %></td>
