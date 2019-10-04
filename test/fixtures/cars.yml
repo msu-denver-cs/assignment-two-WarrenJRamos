@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  model_title: MyString
-  vin_number: 1
-  make_id: one
+  make: one
+  model_title: 4Runner
+  vin_number: 1000
 
 two:
-  model_title: MyString
-  vin_number: 1
-  make_id: two
+  make: two
+  model_title: Rav4
+  vin_number: 1001

@@ -1,7 +1,7 @@
 {
   "MiniTest": {
     "coverage": {
-      "C:/Users/wjnra/Documents/Web Application Development/assignment-one-WarrenJRamos/msu_denver_assignment-one/test/controllers/makes_controller_test.rb": [
+      "C:/Users/wjnra/Documents/Web Application Development/assignment-two-WarrenJRamos/msu_denver_assignment-two/test/controllers/makes_controller_test.rb": [
         1,
         null,
         1,
@@ -51,7 +51,7 @@
         null,
         null
       ],
-      "C:/Users/wjnra/Documents/Web Application Development/assignment-one-WarrenJRamos/msu_denver_assignment-one/test/controllers/parts_controller_test.rb": [
+      "C:/Users/wjnra/Documents/Web Application Development/assignment-two-WarrenJRamos/msu_denver_assignment-two/test/controllers/parts_controller_test.rb": [
         1,
         null,
         1,
@@ -101,7 +101,7 @@
         null,
         null
       ],
-      "C:/Users/wjnra/Documents/Web Application Development/assignment-one-WarrenJRamos/msu_denver_assignment-one/test/models/car_part_test.rb": [
+      "C:/Users/wjnra/Documents/Web Application Development/assignment-two-WarrenJRamos/msu_denver_assignment-two/test/models/car_part_test.rb": [
         1,
         null,
         1,
@@ -110,7 +110,7 @@
         null,
         null
       ],
-      "C:/Users/wjnra/Documents/Web Application Development/assignment-one-WarrenJRamos/msu_denver_assignment-one/test/models/car_test.rb": [
+      "C:/Users/wjnra/Documents/Web Application Development/assignment-two-WarrenJRamos/msu_denver_assignment-two/test/models/car_test.rb": [
         1,
         null,
         1,
@@ -119,7 +119,7 @@
         null,
         null
       ],
-      "C:/Users/wjnra/Documents/Web Application Development/assignment-one-WarrenJRamos/msu_denver_assignment-one/test/models/make_test.rb": [
+      "C:/Users/wjnra/Documents/Web Application Development/assignment-two-WarrenJRamos/msu_denver_assignment-two/test/models/make_test.rb": [
         1,
         null,
         1,
@@ -128,7 +128,7 @@
         null,
         null
       ],
-      "C:/Users/wjnra/Documents/Web Application Development/assignment-one-WarrenJRamos/msu_denver_assignment-one/test/models/part_test.rb": [
+      "C:/Users/wjnra/Documents/Web Application Development/assignment-two-WarrenJRamos/msu_denver_assignment-two/test/models/part_test.rb": [
         1,
         null,
         1,
@@ -138,6 +138,6 @@
         null
       ]
     },
-    "timestamp": 1570142770
+    "timestamp": 1570212272
   }
 }
