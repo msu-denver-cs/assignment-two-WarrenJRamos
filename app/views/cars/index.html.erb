@@ -49,9 +49,3 @@ style: 'color:maroon;font-size:20px' %>
 
 <br><br>
 <%= image_tag("cars2.png", alt: "Cars") %>
-
-<%= form_tag(search_cars_url, method: "get") do %>
-    <%= label_tag(:query, "Search for:") %>
-    <%= text_field_tag(:query) %>
-    <%= submit_tag("Search") %>
-<% end %>

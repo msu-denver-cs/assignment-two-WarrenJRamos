@@ -14,7 +14,7 @@ class PartsTest < ApplicationSystemTestCase
     visit parts_url
     click_on "New Part"
 
-    fill_in "Part name", with: @part.part_name
+    fill_in "Part name", with: "Part3"
     click_on "Create Part"
 
     assert_text "Part was successfully created"
@@ -39,5 +39,19 @@ class PartsTest < ApplicationSystemTestCase
     end
 
     assert_text "Part was successfully destroyed"
+  end
+
+  test "missing part" do
+    visit parts_url
+    fill_in "search", with: "UnknownPart"
+    click_on "Search"
+    refute_selector "td"
+  end
+
+  test "found Part1" do
+    visit parts_url
+    fill_in "search", with: "Part1"
+    click_on "Search"
+    assert_selector "td", text: "Part1"
   end
 end

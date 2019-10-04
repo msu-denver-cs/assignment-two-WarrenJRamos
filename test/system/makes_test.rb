@@ -14,8 +14,8 @@ class MakesTest < ApplicationSystemTestCase
     visit makes_url
     click_on "New Make"
 
-    fill_in "Country", with: @make.country
-    fill_in "Name", with: @make.name
+    fill_in "Country", with: "Italy"
+    fill_in "Name", with: "Maserati"
     click_on "Create Make"
 
     assert_text "Make was successfully created"
@@ -26,8 +26,8 @@ class MakesTest < ApplicationSystemTestCase
     visit makes_url
     click_on "Edit", match: :first
 
-    fill_in "Country", with: @make.country
-    fill_in "Name", with: @make.name
+    fill_in "Country", with: "Japan"
+    fill_in "Name", with: "Honda"
     click_on "Update Make"
 
     assert_text "Make was successfully updated"
@@ -41,5 +41,19 @@ class MakesTest < ApplicationSystemTestCase
     end
 
     assert_text "Make was successfully destroyed"
+  end
+
+  test "missing make in search" do
+    visit makes_url
+    fill_in "search", with: "UnknownMake"
+    click_on "Search"
+    refute_selector "td"
+  end
+
+  test "found Toyota in search" do
+    visit makes_url
+    fill_in "search", with: "Toyota"
+    click_on "Search"
+    assert_selector "td", text: "Toyota"
   end
 end

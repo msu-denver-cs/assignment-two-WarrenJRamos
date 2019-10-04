@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :x64_mingw]
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 3.18.0'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 3.0'
 end
