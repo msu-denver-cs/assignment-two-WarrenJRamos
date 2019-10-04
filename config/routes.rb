@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
   resources :cars do
-    get :autocomplete_car_name, on: :collection
+    get :autocomplete_car_model_title, on: :collection
     collection do
       get 'search'
     end
