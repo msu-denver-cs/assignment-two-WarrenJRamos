@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :parts do
-    get :autocomplete_part_name, on: :collection
+    get :autocomplete_part_part_name, on: :collection
     collection do
       get 'search'
     end
