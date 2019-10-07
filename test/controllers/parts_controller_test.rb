@@ -5,6 +5,29 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
     @part = parts(:one)
   end
 
+  test "shouldn't find a part name" do
+    assert Part.where("part_name like ?", "NOT A PART").length == 0
+  end
+
+  test "should find part names from the fixture" do
+    assert Part.where("part_name like ?", "Part1").length == 1
+  end
+
+  test "searches always return 200" do
+    get search_parts_url, params: { search: "Make" }
+    assert_equal 200, status
+  end
+
+  test "should find Part1" do
+    get search_parts_url, params: { search: "Part1" }
+    assert_select 'td', 'Part1'
+  end
+
+  test "shouldn't find MyString" do
+    get search_parts_url, params: { search: "MyString" }
+    assert_select 'td', false
+  end
+
   test "should get index" do
     get parts_url
     assert_response :success
@@ -19,8 +42,16 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Part.count') do
       post parts_url, params: { part: { part_name: @part.part_name } }
     end
-
+  
     assert_redirected_to part_url(Part.last)
+  end
+
+  test "should not create unprocessable part" do
+    assert_no_difference('Part.count') do
+      post parts_url, params: { part: { part_name: "a" } }
+    end
+  
+    assert_response :success
   end
 
   test "should show part" do
@@ -36,6 +67,11 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
   test "should update part" do
     patch part_url(@part), params: { part: { part_name: @part.part_name } }
     assert_redirected_to part_url(@part)
+  end
+
+  test "should not update unprocessable part" do
+    patch part_url(@part), params: { part: { part_name: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } }
+    assert_response :success
   end
 
   test "should destroy part" do

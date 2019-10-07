@@ -3,7 +3,6 @@
     body {background-color: peachpuff;}
     h1   {color: blue;font-family:verdana;color:maroon;font-size:40px;}
     p    {color: red;}
-    table {border:1;bordercolor:lightsalmon;}
     th {color:maroon;colspan:3;}
     tr {font-size:20px;}
     col {width:130;}
@@ -17,6 +16,7 @@
   <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_make_name_makes_path } %>
   <%= submit_tag("Search") %>
 <% end %>
+<p>Autocomplete works when searching for make names.</p>
 
 <h1>Makes</h1>
 
