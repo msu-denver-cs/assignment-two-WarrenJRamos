@@ -4,31 +4,11 @@ Car.create!([
   {model_title: "Tiguan", vin_number: 1002, make_id: 2},
   {model_title: "Explorer", vin_number: 1003, make_id: 4},
   {model_title: "Sorento", vin_number: 1004, make_id: 6},
-  {model_title: "Civic", vin_number: 1005, make_id: 5}
-])
-CarPart.create!([
-  {car_id: 1, part_id: 1},
-  {car_id: 1, part_id: 2},
-  {car_id: 1, part_id: 3},
-  {car_id: 2, part_id: 1},
-  {car_id: 2, part_id: 3},
-  {car_id: 3, part_id: 2},
-  {car_id: 4, part_id: 6},
-  {car_id: 4, part_id: 7},
-  {car_id: 4, part_id: 8},
-  {car_id: 5, part_id: 2},
-  {car_id: 5, part_id: 5},
-  {car_id: 5, part_id: 9},
-  {car_id: 6, part_id: 1},
-  {car_id: 6, part_id: 2},
-  {car_id: 6, part_id: 3},
-  {car_id: 6, part_id: 4},
-  {car_id: 6, part_id: 5},
-  {car_id: 6, part_id: 6},
-  {car_id: 6, part_id: 7}
+  {model_title: "Civic", vin_number: 1070, make_id: 5},
+  {model_title: "Sorento", vin_number: 1050, make_id: 3}
 ])
 Make.create!([
-  {name: "Toyota", country: "USA"},
+  {name: "Toyota", country: "Japan"},
   {name: "Volkswagen", country: "Germany"},
   {name: "Kia", country: "South Korea"},
   {name: "Ford", country: "USA"},
@@ -45,4 +25,30 @@ Part.create!([
   {part_name: "Alternator"},
   {part_name: "Axle"},
   {part_name: "Brake"}
+])
+CarPart.create!([
+  {car_id: 1, part_id: 1},
+  {car_id: 1, part_id: 2},
+  {car_id: 1, part_id: 3},
+  {car_id: 2, part_id: 1},
+  {car_id: 2, part_id: 3},
+  {car_id: 3, part_id: 2},
+  {car_id: 4, part_id: 6},
+  {car_id: 4, part_id: 7},
+  {car_id: 4, part_id: 8},
+  {car_id: 5, part_id: 2},
+  {car_id: 5, part_id: 5},
+  {car_id: 5, part_id: 9},
+  {car_id: 6, part_id: 1},
+  {car_id: 6, part_id: 3},
+  {car_id: 6, part_id: 4},
+  {car_id: 6, part_id: 5},
+  {car_id: 6, part_id: 6},
+  {car_id: 6, part_id: 7},
+  {car_id: 7, part_id: 1},
+  {car_id: 7, part_id: 4},
+  {car_id: 7, part_id: 6},
+  {car_id: 7, part_id: 7},
+  {car_id: 7, part_id: 8},
+  {car_id: 7, part_id: 9}
 ])
