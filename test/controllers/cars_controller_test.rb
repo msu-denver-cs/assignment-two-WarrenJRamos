@@ -36,6 +36,14 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to car_url(Car.last)
   end
 
+  test "should not create unprocessable car" do
+    assert_no_difference('Car.count') do
+      post cars_url, params: { car: { make_id: 100000, model_title: "a", vin_number: "a" } }
+    end
+  
+    assert_response :success
+  end
+
   test "should find 4Runner" do
     get search_cars_url, params: { search: "4Runner" }
     assert_select 'td', '4Runner'
@@ -64,6 +72,11 @@ class CarsControllerTest < ActionDispatch::IntegrationTest
   test "should update car" do
     patch car_url(@car), params: { car: { make_id: @car.make_id, model_title: @car.model_title, vin_number: @car.vin_number } }
     assert_redirected_to car_url(@car)
+  end
+
+  test "should not update unprocessable car" do
+    patch car_url(@car), params: { car: { make_id: 1000, model_title: "a", vin_number: "a"} }
+    assert_response :success
   end
 
   test "should destroy car" do

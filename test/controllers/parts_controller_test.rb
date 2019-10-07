@@ -46,6 +46,14 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to part_url(Part.last)
   end
 
+  test "should not create unprocessable part" do
+    assert_no_difference('Part.count') do
+      post parts_url, params: { part: { part_name: "a" } }
+    end
+  
+    assert_response :success
+  end
+
   test "should show part" do
     get part_url(@part)
     assert_response :success
@@ -59,6 +67,11 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
   test "should update part" do
     patch part_url(@part), params: { part: { part_name: @part.part_name } }
     assert_redirected_to part_url(@part)
+  end
+
+  test "should not update unprocessable part" do
+    patch part_url(@part), params: { part: { part_name: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" } }
+    assert_response :success
   end
 
   test "should destroy part" do

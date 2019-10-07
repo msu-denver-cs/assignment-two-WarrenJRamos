@@ -1,5 +1,5 @@
 require 'simplecov'
-SimpleCov.formatter = SimpleCov::Formatter::SimpleFormatter
+#SimpleCov.formatter = SimpleCov::Formatter::SimpleFormatter
 # Have to have these even though they're not required for the default formatter.
 SimpleCov.start do
   add_group "app", "app"

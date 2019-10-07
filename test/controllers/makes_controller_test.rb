@@ -46,6 +46,14 @@ class MakesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to make_url(Make.last)
   end
 
+  test "should not create unprocessable make" do
+    assert_no_difference('Make.count') do
+      post makes_url, params: { make: { name: "a", country: "a" } }
+    end
+  
+    assert_response :success
+  end
+
   test "should show make" do
     get make_url(@make)
     assert_response :success
@@ -59,6 +67,12 @@ class MakesControllerTest < ActionDispatch::IntegrationTest
   test "should update make" do
     patch make_url(@make), params: { make: { country: @make.country, name: @make.name } }
     assert_redirected_to make_url(@make)
+  end
+
+  test "should not update unprocessable make" do
+    patch make_url(@make), params: { make: { name: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", 
+      country: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"} }
+    assert_response :success
   end
 
   test "should destroy make" do
