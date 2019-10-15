@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :parts do
     get :autocomplete_part_part_name, on: :collection
     collection do
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  root to: "car#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
